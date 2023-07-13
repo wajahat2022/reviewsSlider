@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <style>
+      /* .collection-list-wrapper.w-dyn-list { 
+  background-color: purple;
+}
+.collection-list-wrapper.w-dyn-list:first-child { 
+  background-color: red;
+
+} */
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap");
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .marquee-row-1._2 {
+        justify-content: space-between;
+        margin-top: 40px;
+      }
+      .marquee-row-1 {
+        background-color: black;
+        display: flex;
+        width: 100%;
+        overflow: visible;
+        border: 1px solid black;
+      }
+
+      .div-block-48 {
+        margin-top: 2em;
+        background-color: black;
+        display: flex;
+        flex: none;
+        align-items: center;
+        grid-row-gap: 40px;
+        grid-column-gap: 40px;
+        margin-bottom: 2em;
+      }
+      .collection-list-wrapper {
+        width: auto;
+        flex: none;
+        display: block;
+        overflow: visible;
+      }
+
+      .collection-list {
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+        flex: auto;
+
+        display: flex;
+        align-items: stretch;
+      }
+
+      .collection-item {
+        width: 510px;
+        flex: none;
+      }
+      .testimonial-box {
+        width: 450px;
+        height: 100%;
+        background-color: white;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        border-radius: 20px;
+        padding: 30px 25px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .div-block-43 {
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .div-block-44 {
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .div-block-45 {
+        display: flex;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .h6.dark {
+        color: #000;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 28px;
+      }
+      .h6 {
+        color: white;
+        letter-spacing: 0.5px;
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-family: "Urbanist", sans-serif;
+      }
+
+      .body-paragraph.dark._16px {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+      }
+
+      .body-paragraph.dark {
+        color: #000;
+        font-size: 18px;
+      }
+
+      .body-paragraph {
+        max-width: none;
+        color: #fff;
+        text-align: left;
+        letter-spacing: 1px;
+        font-family: "Urbanist", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+      }
+
+      .star-rating {
+        max-width: 110px;
+      }
+      img {
+        max-width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+        border: 0;
+      }
+      .testimonial-info {
+        background-color: blue;
+        width: 60px;
+        height: 60px;
+        min-height: 60px;
+        max-height: 60px;
+        background-position: 50%;
+        background-size: cover;
+        border-radius: 1000px;
+      }
+
+      .div-block-46 {
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        display: flex;
+        flex-direction: column;
+      }
+      .h6.dark.testimonial-name {
+        font-size: 18px;
+      }
+
+      .h6.dark {
+        color: #000;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+      }
+
+      .h6 {
+        color: #fff;
+        letter-spacing: 0.5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: "Urban";
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .body-paragraph.dark._16 {
+        font-size: 16px;
+      }
+      .body-paragraph.dark {
+        color: #000;
+        font-size: 18px;
+      }
+      .body-paragraph {
+        max-width: none;
+        color: #fff;
+        text-align: left;
+        letter-spacing: 1px;
+        font-family: "Urban";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+      }
+
+      @keyframes slider {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .marquee-row-1._2 .collection-list.w-dyn-items {
+        animation: slider 200s linear infinite;
+
+        overflow: hidden;
+      }
+
+      .mainSliderBody {
+        background-color: black;
+      }
+
+      
+      .second_row {
+        padding-left: 275px;
+      }
+
+      .marquee-row-1._2.second_row {
+        animation: slider 150s linear infinite;
+      }
+
+
+
+
+
+
+    </style>
+    <div class="mainSliderBody testimonial-marquee-wrap">
+     
+        <div class="div-block-47-right"></div>
+        <div class="div-block-47"></div>
+
+      <div class="marquee-row-1 _2">
+        <div class="div-block-48">
+          <div class="collection-list-wrapper w-dyn-list">
+            <div role="list" class="collection-list w-dyn-items">
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">"Very useful trading indicator!"</div>
+                    <div class="body-paragraph dark _16px">
+                      With EzTrades you get a very useful trading indicator
+                      presented with videos on YT channel, great Discord
+                      community and support for every style of trading. The
+                      owner is very responsive.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd34c06e17253b8c9a751_3%20header.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">Paxnox</div>
+                        <div class="body-paragraph dark _16">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                      class="star-rating"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">
+                      "EzAlgo has taken my trading to the next level."
+                    </div>
+                    <div class="body-paragraph dark _16px">
+                      It's amazing how accurate the zones are and the discord
+                      group is the best place to be. Lots of quality information
+                      in there as well as a great group of people.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd35453ce8056739d11cf_header%204.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">srigusmc</div>
+                        <div class="body-paragraph dark _16">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                      class="star-rating"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">"I was skeptical at first"</div>
+                    <div class="body-paragraph dark _16px">
+                      I decided to pull the trigger and get it. From the first
+                      day, I've learned so much more about TA, price action and
+                      how price respect S/R levels. I've done futures before,
+                      but didn't succeed.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd3668261d99efc97658a_header%206.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">sanderelb</div>
+                        <div class="body-paragraph dark _16">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                      class="star-rating"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">"Great product, great community!"</div>
+                    <div class="body-paragraph dark _16px">
+                      EzAlgo is a great product with a great community around
+                      it. Lots of support and well adjusted traders using this
+                      tool to make money trading horizontal levels. Awesome for
+                      all levels of skill :)
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd34c06e17253b8c9a751_3%20header.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">Kganse7</div>
+                        <div class="body-paragraph dark _16">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                      class="star-rating"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">
+                      "By far EzAlgo is the best multi use indicator on the
+                      market!"
+                    </div>
+                    <div class="body-paragraph dark _16px">
+                      You can adjust the timeframes for the S/R lines on any
+                      timeframe that you want. With plenty of alert settings if
+                      you want to setup bots to trade for you.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd376de9a4415aebfe931_header%208.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">
+                          schneiderclaims
+                        </div>
+                        <div class="body-paragraph dark _16">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                      class="star-rating"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="marquee-row-1 _2 second_row">
+        <div class="div-block-48">
+          <div class="collection-list-wrapper w-dyn-list">
+            <div role="list" class="collection-list w-dyn-items">
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">"Great product, great community!"</div>
+                    <div class="body-paragraph dark _16px">
+                      EzAlgo is a great product with a great community around
+                      it. Lots of support and well adjusted traders using this
+                      tool to make money trading horizontal levels. Awesome for
+                      all levels of skill !
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd34c06e17253b8c9a751_3%20header.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">Kganse7</div>
+                        <div class="body-paragraph dark">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">"Works with any strategy!"</div>
+                    <div class="body-paragraph dark _16px">
+                      Great automatic support and resistance lines for any
+                      timeframe, can work with any strategy!
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd34c06e17253b8c9a751_3%20header.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">lpaul721</div>
+                        <div class="body-paragraph dark">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">"Amazing what EzTrades offers!"</div>
+                    <div class="body-paragraph dark _16px">
+                      The value here is unmatched!!! I'm still surprised more
+                      people haven't caught on to how good this is. This could
+                      change your life if you take everything seriously.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd35453ce8056739d11cf_header%204.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">BC</div>
+                        <div class="body-paragraph dark">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">
+                      "My trading has gone through the roof."
+                    </div>
+                    <div class="body-paragraph dark _16px">
+                      I receive both signals from their pro traders which are on
+                      point like 90% of the time, and they educate me on trading
+                      the KEY LEVELS with their amazingly accurate S/R
+                      indicator.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd345de9a444e90bfe824_2%20header.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">
+                          Jarrod Whelpton
+                        </div>
+                        <div class="body-paragraph dark">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">
+                      " I joined with almost no knowledge about trading 6 months
+                      ago"
+                    </div>
+                    <div class="body-paragraph dark _16px">
+                      I joined this community with the aim of being financially
+                      free which seemed like an impossible task until I joined
+                      this group of brilliant individuals.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd3381a391a90c13637d8_1%20header.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">
+                          SHARKSINVEGAS
+                        </div>
+                        <div class="body-paragraph dark">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">
+                      "The Trading Community is amazing!"
+                    </div>
+                    <div class="body-paragraph dark _16px">
+                      This is the best trading indicator I have used till date.
+                      Very beginner friend and a good fit for experienced
+                      traders. You will find a lot of experienced traders to
+                      support you.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        class="testimonial-info"
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd34c06e17253b8c9a751_3%20header.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">
+                          heavensjoybiz
+                        </div>
+                        <div class="body-paragraph dark _16">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                      class="star-rating"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">
+                      "My trading has gone through the roof."
+                    </div>
+                    <div class="body-paragraph dark _16px">
+                      I receive both signals from their pro traders which are on
+                      point like 90% of the time, and they educate me on trading
+                      the KEY LEVELS with their amazingly accurate S/R
+                      indicator.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd345de9a444e90bfe824_2%20header.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">
+                          Jarrod Whelpton
+                        </div>
+                        <div class="body-paragraph dark _16">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                      class="star-rating"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">"Amazing what EzTrades offers!"</div>
+                    <div class="body-paragraph dark _16px">
+                      The value here is unmatched!!! I'm still surprised more
+                      people haven't caught on to how good this is. This could
+                      change your life if you take everything seriously.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd3381a391a90c13637d8_1%20header.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">BC</div>
+                        <div class="body-paragraph dark _16">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                      class="star-rating"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div role="listitem" class="collection-item w-dyn-item">
+                <div class="testimonial-box">
+                  <div class="div-block-43">
+                    <div class="h6 dark">
+                      " I joined with almost no knowledge about trading 6 months
+                      ago"
+                    </div>
+                    <div class="body-paragraph dark _16px">
+                      I joined this community with the aim of being financially
+                      free which seemed like an impossible task until I joined
+                      this group of brilliant individuals.
+                    </div>
+                  </div>
+                  <div class="div-block-45">
+                    <div class="div-block-44">
+                      <div
+                        style="
+                          background-image: url(https://uploads-ssl.webflow.com/640e3bb985f0c010e5bf2f6e/643dd38006e172be03c9af61_header%209.webp);
+                        "
+                        class="testimonial-info"
+                      ></div>
+                      <div class="div-block-46">
+                        <div class="h6 dark testimonial-name">
+                          SHARKSINVEGAS
+                        </div>
+                        <div class="body-paragraph dark _16">Verified User</div>
+                      </div>
+                    </div>
+                    <img
+                      src="https://uploads-ssl.webflow.com/62f11b068296f36584c1ec32/640f5dce0c48fdedaf9173f9_starrating.svg"
+                      loading="lazy"
+                      alt=""
+                      class="star-rating"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
